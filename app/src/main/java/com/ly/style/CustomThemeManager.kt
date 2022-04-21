@@ -11,18 +11,18 @@ import androidx.compose.ui.graphics.Color
 object CustomThemeManager {
     object Default {
         val darkColors = darkColors(
-            primary = Default200,
-            primaryVariant = Default700,
-            secondary = DefaultSecondary,
+            primary = Color(0xffdd5b7f),
+            primaryVariant = Color(0xffdd5b7f),
+            secondary = Color(0xffdd5b7f),
             secondaryVariant = Color.White,
             background = Color.Black,
             surface = Color.White,
         )
 
         val lightColors = lightColors(
-            primary = Default500,
-            primaryVariant = Default700,
-            secondary = DefaultSecondary,
+            primary = Color(0xffdd5b7f),
+            primaryVariant = Color(0xffdd5b7f),
+            secondary = Color(0xffdd5b7f),
             secondaryVariant = Color.Black,
             background = Color.White,
             surface = DefaultOnPrimary
@@ -136,6 +136,7 @@ object CustomThemeManager {
         darkTheme: Boolean = isSystemInDarkTheme(),
         content: @Composable () -> Unit
     ) {
+        print("the themeType is $type")
         val wrappedColor = getWrappedColor(type)
         val colors = if (darkTheme) wrappedColor.darkColors else wrappedColor.lightColors
         MaterialTheme(
