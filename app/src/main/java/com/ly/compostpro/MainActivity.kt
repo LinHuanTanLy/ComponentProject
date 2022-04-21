@@ -14,19 +14,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
+import com.ly.compostpro.pages.MainCompose
 import com.ly.compostpro.ui.theme.CompostProTheme
-import com.ly.compostpro.widget.TopAppBar
+import com.ly.style.CustomThemeManager
+import com.ly.style.themeTypeState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CompostProTheme {
-                Scaffold(
-                    topBar = { TopAppBar(title = "demo") },
-                    content = { Menu() }
-                )
-
+            val themeState = themeTypeState.value
+            //设置为沉浸式状态栏
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            CustomThemeManager.DecTheme(themeState){
+                ProvideWindowInsets{
+                    MainCompose()
+                }
             }
         }
     }
