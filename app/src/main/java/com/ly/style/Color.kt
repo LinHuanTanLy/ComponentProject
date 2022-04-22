@@ -37,6 +37,8 @@ val Theme5_500 = Color(0xFF2e7d32)
 val Theme5_700 = Color(0xFF005005)
 val Theme5Secondary = Color(0xFF60ad5e)
 val Theme5OnPrimary = Color(0xFFFFFFFF)
+val cFF445E = Color(0xffFF445E)
+val cFFFFFF = Color(0xffFFFFFF)
 
 val c_b66731 = Color(0xFFb66731)
 
