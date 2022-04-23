@@ -1,4 +1,5 @@
 package com.ly.compostpro.widget
+
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigation
@@ -36,10 +37,13 @@ fun BottomNavigationWidget(navController: NavHostController) {
 
             //记录动画
             val translationY = remember { androidx.compose.animation.core.Animatable(0F) }
+
             LaunchedEffect(currIndex.value) {
-                if (item.id == currIndex.value)
+                if (item.id == currIndex.value) {
                     translationY.animateTo(-4F)
-                else translationY.animateTo(0F)
+                } else {
+                    translationY.animateTo(0F)
+                }
             }
 
             BottomNavigationItem(
