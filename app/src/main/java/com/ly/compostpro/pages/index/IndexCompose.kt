@@ -3,6 +3,7 @@ package com.ly.compostpro.pages.index
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
+import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
@@ -16,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -23,6 +25,7 @@ import com.google.accompanist.pager.rememberPagerState
 import com.ly.compostpro.pages.index.found.Found
 import com.ly.compostpro.widget.AppbarSearch
 import com.ly.conf.RouterConf.index
+import com.ly.style.cFF445E
 import kotlinx.coroutines.launch
 
 @Composable
@@ -50,6 +53,12 @@ fun Index(c: NavHostController) {
                 ScrollableTabRow(
                     selectedTabIndex = pagerState.currentPage,
                     edgePadding = 0.dp,
+//                    indicator = { positions ->//设置滑动条的属性，默认是白色的
+//                        TabRowDefaults.Indicator(
+//                            Modifier.tabIndicatorOffset(positions[pagerState.currentPage]),
+//                            color = cFF445E
+//                        )
+//                    },
                     tabs = {
                         menu.forEachIndexed { index, item ->
                             Tab(onClick = {
@@ -58,7 +67,7 @@ fun Index(c: NavHostController) {
                                 }
                             }, selected = index == pagerState.currentPage, text = {
                                 Text(
-                                    text = item
+                                    text = item,
                                 )
                             })
                         }

@@ -22,14 +22,13 @@ fun Found() {
 
     Column(
         horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top,
-
         ) {
         Banner(
             imgs = listOf(
                 "https://t7.baidu.com/it/u=1956604245,3662848045&fm=193&f=GIF",
                 "https://t7.baidu.com/it/u=2529476510,3041785782&fm=193&f=GIF",
             ),
-            modifier = Modifier.height(140.dp).padding(vertical = 4.dp, horizontal = 12.dp)
+            modifier = Modifier.height(140.dp).padding(vertical = 4.dp, horizontal = 4.dp)
         )
     }
 

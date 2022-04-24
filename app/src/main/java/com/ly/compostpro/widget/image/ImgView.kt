@@ -12,7 +12,7 @@ import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
 
 @Composable
-fun ImgView(img:String){
+fun ImgView(img:String,modifier: Modifier){
 
     Image(
         painter = rememberImagePainter(
@@ -22,7 +22,7 @@ fun ImgView(img:String){
                 transformations(RoundedCornersTransformation(50f, 50f, 30f, 30f))
             },
         ),
-        modifier = Modifier.height(100.dp),
+        modifier = modifier,
         contentScale = ContentScale.Crop,
         contentDescription = null
     )
