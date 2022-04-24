@@ -24,9 +24,9 @@ import com.ly.model.nav.NavModel
 @Composable
 fun BottomNavigationWidget(navController: NavHostController) {
     val list = listOf(
-        NavModel(0, "首页", Icons.Default.Home),
-        NavModel(1, "广场", Icons.Default.Face),
-        NavModel(2, "我的", Icons.Default.ThumbUp),
+        NavModel(0, "首页", Icons.Default.Home,RouterConf.index),
+        NavModel(1, "广场", Icons.Default.Face,RouterConf.square),
+        NavModel(2, "我的", Icons.Default.ThumbUp,RouterConf.mine),
     )
     val currIndex = remember {
         mutableStateOf(0)
@@ -63,7 +63,7 @@ fun BottomNavigationWidget(navController: NavHostController) {
                 label = { Text(text = item.menu) },
                 onClick = {
                     currIndex.value = item.id
-                    navController.navigate(RouterConf.index) {
+                    navController.navigate(item.router) {
                         popUpTo(navController.graph.findStartDestination().id) {
                             saveState = true
                         }
