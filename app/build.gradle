@@ -69,6 +69,13 @@ dependencies {
     implementation 'com.google.accompanist:accompanist-systemuicontroller:0.15.0'
 
     implementation "androidx.navigation:navigation-compose:$nav_version"
+    api "com.google.accompanist:accompanist-pager:0.16.1"
+    implementation("io.coil-kt:coil:1.4.0")
+    implementation("io.coil-kt:coil-compose:1.4.0")
+    //选择添加
+    implementation("io.coil-kt:coil-gif:1.2.2")//支持GIF
+    implementation("io.coil-kt:coil-svg:1.2.2")//支持SVG
+    implementation("io.coil-kt:coil-video:1.2.2")//支持V
 
 
 }

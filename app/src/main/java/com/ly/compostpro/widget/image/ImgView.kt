@@ -1,0 +1,29 @@
+package com.ly.compostpro.widget.image
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
+import coil.transform.RoundedCornersTransformation
+
+@Composable
+fun ImgView(img:String){
+
+    Image(
+        painter = rememberImagePainter(
+            img,
+            builder = {
+                //可以单独设置4个角的圆角度
+                transformations(RoundedCornersTransformation(50f, 50f, 30f, 30f))
+            },
+        ),
+        modifier = Modifier.height(100.dp),
+        contentScale = ContentScale.Crop,
+        contentDescription = null
+    )
+}
